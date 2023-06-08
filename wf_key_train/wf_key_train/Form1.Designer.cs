@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.radioButtonYes = new System.Windows.Forms.RadioButton();
+            this.radioButtonNo = new System.Windows.Forms.RadioButton();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
+            this.labelTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +63,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -87,52 +90,52 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Case Senetive:";
             // 
-            // radioButton1
+            // radioButtonYes
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(527, 83);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 19);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonYes.AutoSize = true;
+            this.radioButtonYes.Checked = true;
+            this.radioButtonYes.Location = new System.Drawing.Point(527, 83);
+            this.radioButtonYes.Name = "radioButtonYes";
+            this.radioButtonYes.Size = new System.Drawing.Size(42, 19);
+            this.radioButtonYes.TabIndex = 5;
+            this.radioButtonYes.TabStop = true;
+            this.radioButtonYes.Text = "Yes";
+            this.radioButtonYes.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonNo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(585, 83);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(41, 19);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonNo.AutoSize = true;
+            this.radioButtonNo.Location = new System.Drawing.Point(585, 83);
+            this.radioButtonNo.Name = "radioButtonNo";
+            this.radioButtonNo.Size = new System.Drawing.Size(41, 19);
+            this.radioButtonNo.TabIndex = 6;
+            this.radioButtonNo.Text = "No";
+            this.radioButtonNo.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxOutput
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 127);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(723, 70);
-            this.textBox1.TabIndex = 7;
+            this.textBoxOutput.Location = new System.Drawing.Point(37, 127);
+            this.textBoxOutput.Multiline = true;
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.Size = new System.Drawing.Size(723, 70);
+            this.textBoxOutput.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(37, 203);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(723, 176);
-            this.textBox2.TabIndex = 8;
+            this.textBoxInput.Location = new System.Drawing.Point(37, 203);
+            this.textBoxInput.Multiline = true;
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(723, 176);
+            this.textBoxInput.TabIndex = 8;
             // 
-            // label4
+            // labelTime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Time: 0s";
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(59, 401);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(50, 15);
+            this.labelTime.TabIndex = 9;
+            this.labelTime.Text = "Time: 0s";
             // 
             // label5
             // 
@@ -150,6 +153,11 @@
             this.progressBar1.Size = new System.Drawing.Size(312, 23);
             this.progressBar1.TabIndex = 11;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -157,11 +165,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.labelTime);
+            this.Controls.Add(this.textBoxInput);
+            this.Controls.Add(this.textBoxOutput);
+            this.Controls.Add(this.radioButtonNo);
+            this.Controls.Add(this.radioButtonYes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
@@ -169,7 +177,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,12 +190,13 @@
         private Label label2;
         private NumericUpDown numericUpDown1;
         private Label label3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label4;
+        private RadioButton radioButtonYes;
+        private RadioButton radioButtonNo;
+        private TextBox textBoxOutput;
+        private TextBox textBoxInput;
+        private Label labelTime;
         private Label label5;
         private ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
