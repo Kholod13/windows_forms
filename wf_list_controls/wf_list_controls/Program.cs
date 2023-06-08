@@ -1,4 +1,4 @@
-namespace wf_controls
+namespace wf_list_controls
 {
     internal static class Program
     {

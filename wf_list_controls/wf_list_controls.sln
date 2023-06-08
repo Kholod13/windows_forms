@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wf_controls", "wf_controls\wf_controls.csproj", "{EFD75090-38B1-4454-8511-1724A54D8DD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wf_list_controls", "wf_list_controls\wf_list_controls.csproj", "{59C6D898-A59E-47F1-8270-BF5A43C5FEFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EFD75090-38B1-4454-8511-1724A54D8DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFD75090-38B1-4454-8511-1724A54D8DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFD75090-38B1-4454-8511-1724A54D8DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFD75090-38B1-4454-8511-1724A54D8DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C6D898-A59E-47F1-8270-BF5A43C5FEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C6D898-A59E-47F1-8270-BF5A43C5FEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C6D898-A59E-47F1-8270-BF5A43C5FEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C6D898-A59E-47F1-8270-BF5A43C5FEFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D9B6BF82-1BBF-4D1F-91E9-10FCD35F9763}
+		SolutionGuid = {3D957EBA-876E-4248-9F92-F330C5B6D125}
 	EndGlobalSection
 EndGlobal
