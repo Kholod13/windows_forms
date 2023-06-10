@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace blaBlaPaint
 {
-    internal class Curve : IDrawable
+    internal class Pencil : IDrawable
     {
         private List<Point> points;
         private Color color;
         private float size;
 
-        public Curve(Color color, float size)
+        public Pencil(Color color, float size)
         {
             points = new List<Point>();
             this.color = color;
@@ -36,7 +36,14 @@ namespace blaBlaPaint
             {
                 using (Pen pen = new Pen(color, size))
                 {
-                    graphics.DrawCurve(pen, points.ToArray());
+                    graphics.DrawLines(pen, points.ToArray());
+                }
+            }
+            else if (points.Count == 1)
+            {
+                using (Pen pen = new Pen(color, size))
+                {
+                    graphics.DrawLine(pen, points[0], points[0]);
                 }
             }
         }

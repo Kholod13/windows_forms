@@ -6,38 +6,32 @@ using System.Threading.Tasks;
 
 namespace blaBlaPaint
 {
-    internal class Curve : IDrawable
+    internal class Pointer : IDrawable
     {
-        private List<Point> points;
+        private Point point;
         private Color color;
         private float size;
 
-        public Curve(Color color, float size)
+        public Pointer(Color color, float size)
         {
-            points = new List<Point>();
             this.color = color;
             this.size = size;
         }
 
         public void StartDrawing(Point startPoint)
         {
-            points.Clear();
-            points.Add(startPoint);
+            point = startPoint;
         }
 
         public void ContinueDrawing(Point nextPoint)
         {
-            points.Add(nextPoint);
         }
 
         public void Drawing(Graphics graphics)
         {
-            if (points.Count > 1)
+            using (SolidBrush brush = new SolidBrush(color))
             {
-                using (Pen pen = new Pen(color, size))
-                {
-                    graphics.DrawCurve(pen, points.ToArray());
-                }
+                graphics.FillEllipse(brush, point.X - size / 2, point.Y - size / 2, size, size);
             }
         }
     }

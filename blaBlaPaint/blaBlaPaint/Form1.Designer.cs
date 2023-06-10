@@ -34,10 +34,10 @@
             this.toolStripComboBoxInstruments = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButtonColor = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBarSize = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             this.toolStripButtonColor.Name = "toolStripButtonColor";
             this.toolStripButtonColor.Size = new System.Drawing.Size(40, 22);
             this.toolStripButtonColor.Text = "Color";
+            this.toolStripButtonColor.Click += new System.EventHandler(this.toolStripButtonColor_Click);
             // 
             // label1
             // 
@@ -82,23 +83,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Size:";
             // 
-            // trackBar1
+            // trackBarSize
             // 
-            this.trackBar1.Location = new System.Drawing.Point(48, 28);
-            this.trackBar1.Maximum = 9;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(88, 45);
-            this.trackBar1.TabIndex = 2;
-            this.trackBar1.Value = 1;
+            this.trackBarSize.Location = new System.Drawing.Point(48, 28);
+            this.trackBarSize.Maximum = 9;
+            this.trackBarSize.Minimum = 1;
+            this.trackBarSize.Name = "trackBarSize";
+            this.trackBarSize.Size = new System.Drawing.Size(88, 45);
+            this.trackBarSize.TabIndex = 2;
+            this.trackBarSize.Value = 1;
+            this.trackBarSize.ValueChanged += new System.EventHandler(this.trackBarSize_ValueChanged);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(12, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(776, 373);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // Form1
             // 
@@ -106,14 +113,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.trackBarSize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "BlaBlaPaint";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,7 +134,7 @@
         private ToolStripComboBox toolStripComboBoxInstruments;
         private ToolStripButton toolStripButtonColor;
         private Label label1;
-        private TrackBar trackBar1;
+        private TrackBar trackBarSize;
         private PictureBox pictureBox1;
     }
 }
